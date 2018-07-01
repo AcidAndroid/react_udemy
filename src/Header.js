@@ -4,8 +4,12 @@ export default class Header extends Component {
   render() {
     return (
       <React.Fragment>
-          <h1>Grocery List for Monday</h1>
+          <h1>Grocery List for {this.props.day}</h1>
       </React.Fragment>
     )
   }
+}
+
+Header.defaultProps={
+    day:'Anyday'
 }

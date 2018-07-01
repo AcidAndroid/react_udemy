@@ -14,3 +14,7 @@ export default class GroceryList extends Component {
     )
   }
 }
+
+GroceryList.defaultProps = {
+    list:[]  
+  }

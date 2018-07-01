@@ -11,7 +11,14 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header/>
+        <GroceryList />
+
+        <Header day={'Monday'}/>
         <GroceryList list={monday}/>
+
+        <Header day={'Tuesday'}/>
+        <GroceryList list={tuesday}/>
+        
       </React.Fragment>
     );
   }
