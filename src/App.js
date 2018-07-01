@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import GroceryList from './GroceryList';
+import Header from './Header';
 
 class App extends Component {
   render() {
     return (
-      <GroceryList/>
+      <React.Fragment>
+        <Header/>
+        <GroceryList/>
+      </React.Fragment>
     );
   }
 }

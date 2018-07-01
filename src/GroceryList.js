@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 export default class GroceryList extends Component {
   render() {
     return (
-      <React.Fragment>
-          <h1>Grocery Listo for Monday</h1>
+      <React.Fragment>          
           <ol>
               <li>Bread</li>
               <li>Flowers</li>
