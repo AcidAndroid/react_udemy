@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class Header extends Component {
   render() {
@@ -12,4 +13,8 @@ export default class Header extends Component {
 
 Header.defaultProps={
     day:'Anyday'
+}
+
+Header.protoTypes={
+    day:PropTypes.string
 }

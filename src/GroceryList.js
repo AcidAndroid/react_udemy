@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 
 export default class GroceryList extends Component {
   render() {
@@ -17,4 +17,11 @@ export default class GroceryList extends Component {
 
 GroceryList.defaultProps = {
     list:[]  
+  }
+
+  GroceryList.propTypes={
+      list:PropTypes.arrayOf(PropTypes.shape({
+          id:PropTypes.number
+          ,name:PropTypes.string
+      }))
   }
