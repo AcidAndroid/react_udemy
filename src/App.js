@@ -2,40 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 import GroceryList from './GroceryList';
 import Header from './Header';
+import Square from './Square';
 
 
 class App extends Component {
-  
-  state ={
-    count:0
-  }
-
-  
-  incrementCount =()=> {
-    this.setState((prevState)=>{
-      return{
-        count: prevState.count +1
-      }
-    })
-  }
-
-  decrementCount =()=> {
-    this.setState((prevState)=>{
-      return{
-        count: prevState.count -1
-      }
-    })
-  }
   
   
   render() {
     return (
       <React.Fragment>
-        <h1>
-          {this.state.count}
-        </h1>
-       <button onClick={this.incrementCount} >+</button>
-       <button onClick={this.decrementCount} >-</button>
+        <div><Square /><Square /><Square /></div>
+        <div><Square /><Square /><Square /></div>
+        <div><Square /><Square /><Square /></div>
       </React.Fragment>
     );
   }
