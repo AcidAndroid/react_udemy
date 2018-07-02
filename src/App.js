@@ -35,9 +35,53 @@ class App extends Component {
     )
   }
 
+
+  playerWon() {
+    const board = this.state.board;
+    const winningConditions = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+   ];
+
+    // determining if someone won
+    for(let i = 0; i < winningConditions.length; i++){
+     const [a, b, c] = winningConditions[i];
+      if(board[a] !== "" &&
+         board[a] === board[b] &&
+         board[b] === board[c])
+      {
+        return board[winningConditions[i][0]]
+      }
+
+    }
+
+    // check if board is full
+    let isBoardFull = true;
+    for(let i = 0; i < board.length; i++){
+      if( board[i] === "" ){
+        isBoardFull = false;
+      }
+    }
+
+    if(!isBoardFull){
+      // if no one has won and the board is not full, game continues
+      return ""
+    } else {
+      // if no one has won when the board is full, it is a tie
+      return "tie";
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
+        <h1>{this.playerWon()}</h1>
         <div>
           <Square handleClick={()=>this.changeOnSquares(0)} value={this.state.board[0]} />
           <Square handleClick={()=>this.changeOnSquares(1)} value={this.state.board[1]} />
