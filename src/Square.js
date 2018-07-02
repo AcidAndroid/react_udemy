@@ -13,23 +13,13 @@ const style = {
     verticalAlign: "top",  
   }
 
-  const squareValues =[' ','X','O']
+  
 export default class Square extends Component {
-    
-    state={
-        value :0
-    }
-
-    squareClicked =()=>{
-        console.log('Click')
-        this.setState((prevState,props)=>{
-            return {value: (prevState.value+4)%3}
-        })
-    }
+       
 
   render() {
     return (
-        <div style={style} onClick={this.squareClicked} >{ squareValues[this.state.value] }</div>
+        <div style={style} onClick={this.props.handleClick}>{this.props.value}</div>
     )
   }
 }
